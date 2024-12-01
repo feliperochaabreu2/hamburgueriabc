@@ -1,2 +1,10 @@
 
 *.properties
+hamburgueria-backend-main/hamburgueria-backend/.classpath
+hamburgueria-backend-main/hamburgueria-backend/.project
+hamburgueria-backend-main/hamburgueria-backend/.settings/org.eclipse.core.resources.prefs
+hamburgueria-backend-main/hamburgueria-backend/.settings/org.eclipse.jdt.apt.core.prefs
+hamburgueria-backend-main/hamburgueria-backend/.settings/org.eclipse.jdt.core.prefs
+hamburgueria-backend-main/hamburgueria-backend/.settings/org.eclipse.m2e.core.prefs
+hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/MANIFEST.MF
+hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/maven/com.hamburgueria/hamburgueria-backend/pom.properties
