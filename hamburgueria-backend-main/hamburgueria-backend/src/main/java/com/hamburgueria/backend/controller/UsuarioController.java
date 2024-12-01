@@ -19,12 +19,10 @@ public class UsuarioController {
 	
 	@Autowired
     private UsuarioService usuarioService;
-	@CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/cadastrar")
     public Usuario cadastrar(@RequestBody Usuario usuario) {
         return usuarioService.cadastrarUsuario(usuario);
     }
-	@CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/login")
     public Usuario login(@RequestParam String email, @RequestParam String senha) {
         return usuarioService.login(email, senha);
