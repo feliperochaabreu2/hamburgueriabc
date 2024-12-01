@@ -24,11 +24,6 @@ public class PedidoController {
     public Pedido finalizarPedido(@RequestBody Pedido pedido) {
         return pedidoService.criarPedido(pedido);
     }
-    
-    @GetMapping("/ping")
-    public String testar() {
-        return "OK Sucesso";
-    }
 
     @GetMapping
     public List<Pedido> listarPedidos() {

@@ -10,6 +10,7 @@ public class Pedido {
 	
 	@Id
     private String id;
+	private int idInt; 
     private List<ItemPedido> itens;
     private String enderecoEntrega;
     private double total;
@@ -31,6 +32,12 @@ public class Pedido {
 	}
 	public void setEnderecoEntrega(String enderecoEntrega) {
 		this.enderecoEntrega = enderecoEntrega;
+	}
+	public int getIdInt() {
+		return idInt;
+	}
+	public void setIdInt(int idInt) {
+		this.idInt = idInt;
 	}
 
 }
