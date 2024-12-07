@@ -13,3 +13,4 @@ hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/MANIFEST.
 hamburgueria-backend-main/hamburgueria-backend/.settings/org.springframework.ide.eclipse.prefs
 hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/MANIFEST.MF
 hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/maven/com.hamburgueria/hamburgueria-backend/pom.properties
+*.properties
