@@ -12,6 +12,7 @@ public class Usuario {
     private String endereco;
     private String email;
     private String senha;
+    private String cpf;
 	public String getNome() {
 		return nome;
 	}
@@ -41,6 +42,12 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 }
