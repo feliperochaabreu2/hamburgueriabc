@@ -1,3 +1,4 @@
+/*
 package com.hamburgueria.backend.service;
 
 import java.util.Optional;
@@ -55,3 +56,68 @@ public class UsuarioService {
 	    }
 
 }
+*/
+
+package com.hamburgueria.backend.service;
+
+import java.util.Optional;
+import java.util.regex.Pattern;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hamburgueria.backend.exception.UsuarioJaExisteException;
+import com.hamburgueria.backend.model.Usuario;
+import com.hamburgueria.backend.repository.UsuarioRepository;
+
+@Service
+public class UsuarioService {
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	public Usuario cadastrarUsuario(Usuario usuario) {
+		Optional<Usuario> existente = usuarioRepository.findFirstByEmail(usuario.getEmail());
+		if (existente.equals(Optional.empty())) {
+			return usuarioRepository.save(usuario);
+		} else {
+			throw new UsuarioJaExisteException("Usuário já existe.");
+		}
+	}
+
+	public Usuario login(String identificacao, String senha) {
+		Usuario usuario;
+
+		// Verifica se o identificador é CPF
+		Pattern cpfPattern = Pattern.compile("\\d{11}|\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}");
+		if (cpfPattern.matcher(identificacao).matches()) {
+			usuario = usuarioRepository.findByCpf(identificacao).orElse(null);
+		} else {
+			// Assume que é e-mail
+			usuario = usuarioRepository.findByEmail(identificacao);
+		}
+
+		if (usuario != null && usuario.getSenha().equals(senha)) {
+			return usuario;
+		}
+		throw new RuntimeException("Identificação ou senha inválidos");
+	}
+
+	public boolean validarEmail(String email) {
+		Optional<Usuario> existente = usuarioRepository.findFirstByEmail(email);
+		return existente.isPresent();
+	}
+
+	public boolean redefinirSenha(String email, String novaSenha) {
+		Optional<Usuario> usuarioExistente = usuarioRepository.findFirstByEmail(email);
+		if (usuarioExistente.isPresent()) {
+			Usuario usuario = usuarioExistente.get();
+			usuario.setSenha(novaSenha);
+			usuarioRepository.save(usuario);
+			return true;
+		}
+		return false;
+	}
+}
+
+

@@ -1,3 +1,4 @@
+/*
 package com.hamburgueria.backend.repository;
 
 import java.util.Optional;
@@ -15,3 +16,24 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String> {
 	Optional<Usuario> findByEmailAndSenha(String email, String senha);
 
 }
+*/
+
+package com.hamburgueria.backend.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.hamburgueria.backend.model.Usuario;
+
+public interface UsuarioRepository extends MongoRepository<Usuario, String> {
+	
+	Usuario findByEmail(String email);
+
+	Optional<Usuario> findFirstByEmail(String email);
+	
+	Optional<Usuario> findByCpf(String cpf);
+
+	Optional<Usuario> findByEmailAndSenha(String email, String senha);
+}
+
