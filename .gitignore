@@ -16,3 +16,6 @@ hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/maven/com
 *.properties
 /hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF
 /hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/maven/com.hamburgueria/hamburgueria-backend
+*.class
+*.MF
+*.properties
