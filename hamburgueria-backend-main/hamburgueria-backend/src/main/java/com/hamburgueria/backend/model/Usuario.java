@@ -20,10 +20,10 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getCpf() {
+	public String getcpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setcpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getTelefone() {

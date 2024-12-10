@@ -61,7 +61,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hamburgueria.backend.model.Usuario;
@@ -81,8 +80,27 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public Usuario login(@RequestParam String identificacao, @RequestParam String senha) {
-        return usuarioService.login(identificacao, senha);
+    public Usuario login(@RequestBody Usuario usuario) {
+        String identificacao = usuario.getEmail(); // Usado como genérico para email ou CPF
+        String senha = usuario.getSenha();
+
+        if (identificacao == null || senha == null) {
+            throw new IllegalArgumentException("Identificação e senha são obrigatórios.");
+        }
+
+        Usuario autenticado;
+
+        if (identificacao.contains("@")) {
+            autenticado = usuarioService.loginPorEmail(identificacao, senha);
+        } else {
+            autenticado = usuarioService.loginPorCpf(identificacao, senha);
+        }
+
+        if (autenticado == null) {
+            throw new IllegalArgumentException("Usuário ou senha inválidos.");
+        }
+
+        return autenticado;
     }
     
     @PostMapping("/email")
