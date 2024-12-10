@@ -19,3 +19,50 @@ hamburgueria-backend-main/hamburgueria-backend/target/classes/META-INF/maven/com
 *.class
 *.MF
 *.properties
+*.class
+
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+/src/main/resources/application.properties
+/bin/
+pom.xml
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+
+### Eclipse ###
+.metadata/
+src/main/resources/application.properties
+*.txt
