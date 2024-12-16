@@ -14,6 +14,7 @@ public class Pedido {
     private List<ItemPedido> itens;
     private String enderecoEntrega;
     private double total;
+    private String modoPagamento;
     
 	public List<ItemPedido> getItens() {
 		return itens;
@@ -38,6 +39,12 @@ public class Pedido {
 	}
 	public void setIdInt(int idInt) {
 		this.idInt = idInt;
+	}
+	public String getModoPagamento() {
+		return modoPagamento;
+	}
+	public void setModoPagamento(String modoPagamento) {
+		this.modoPagamento = modoPagamento;
 	}
 
 }
