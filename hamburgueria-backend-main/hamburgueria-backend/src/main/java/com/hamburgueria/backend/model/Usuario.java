@@ -20,12 +20,7 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getcpf() {
-		return cpf;
-	}
-	public void setcpf(String cpf) {
-		this.cpf = cpf;
-	}
+
 	public String getTelefone() {
 		return telefone;
 	}
@@ -49,6 +44,12 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 
