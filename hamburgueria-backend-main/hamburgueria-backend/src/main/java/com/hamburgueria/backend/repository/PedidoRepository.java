@@ -8,4 +8,6 @@ import com.hamburgueria.backend.model.Pedido;
 
 public interface PedidoRepository extends MongoRepository<Pedido, String> {
 		Optional<Pedido> findTopByOrderByIdIntDesc();
+		
+		Optional<Pedido> findByIdInt(int idInt);
 }

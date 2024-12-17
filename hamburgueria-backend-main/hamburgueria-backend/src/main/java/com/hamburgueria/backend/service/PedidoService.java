@@ -23,6 +23,18 @@ public class PedidoService {
 
 	        return pedidoRepository.save(pedido);
 	    }
+	 	
+	 	public boolean atualizarStatusPedido(int id) {
+	        Optional<Pedido> pedidoOptional = pedidoRepository.findByIdInt(id);
+
+	        if (pedidoOptional.isPresent()) {
+	            Pedido pedido = pedidoOptional.get();
+	            pedido.setStatus(true); // Define o status como entregue (true)
+	            pedidoRepository.save(pedido); // Salva a alteração
+	            return true;
+	        }
+	        return false; // Retorna false se o pedido não for encontrado
+	    }
 
 	    public List<Pedido> listarPedidos() {
 	        return pedidoRepository.findAll();

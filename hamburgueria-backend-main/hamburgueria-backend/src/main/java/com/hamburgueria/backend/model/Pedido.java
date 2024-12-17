@@ -15,6 +15,8 @@ public class Pedido {
     private String enderecoEntrega;
     private double total;
     private String modoPagamento;
+    private String cliente;
+    private boolean status;
     
 	public List<ItemPedido> getItens() {
 		return itens;
@@ -45,6 +47,18 @@ public class Pedido {
 	}
 	public void setModoPagamento(String modoPagamento) {
 		this.modoPagamento = modoPagamento;
+	}
+	public String getCliente() {
+		return cliente;
+	}
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 }
